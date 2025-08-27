@@ -1,0 +1,41 @@
+# ==============================================================================
+# Recipe Sharing App - Docker Compose Configuration
+# ==============================================================================
+# This file defines how to run the Recipe Sharing App using Docker containers
+# Perfect for local development and testing
+
+version: '3.8'
+
+services:
+  # Recipe Sharing Application
+  recipe-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recipe-sharing-app
+    ports:
+      - "8000:8000"    # Map port 8000 from container to host
+    environment:
+      - ENVIRONMENT=development
+      - PORT=8000
+    volumes:
+      - ./frontend_simple.html:/app/static/index.html:ro  # Mount frontend as read-only
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a reverse proxy (uncomment if needed)
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: recipe-app-nginx
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #   depends_on:
+  #     - recipe-app
+  #   restart: unless-stopped
