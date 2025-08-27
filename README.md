@@ -8,9 +8,9 @@
 
 ## 🙏 Acknowledgments
 
-Special thanks to **[Manara](https://app.manara.tech/)**  for providing this amazing opportunity to learn and implement AWS solutions through the SAA learning path. 
+Special thanks to **Manara**  for providing this amazing opportunity to learn and implement AWS solutions through the SAA learning path. 
 
-Huge appreciation to **[Ayman Aly](https://www.linkedin.com/in/ayman-mahmoud/)** 🚀 - an incredible instructor whose guidance made this AWS journey both educational and enjoyable!
+Huge appreciation to **Ayman Aly** 🚀 - an incredible instructor whose guidance made this AWS journey both educational and enjoyable!
 
 ---
 
