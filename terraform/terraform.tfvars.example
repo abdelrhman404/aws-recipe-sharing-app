@@ -1,0 +1,20 @@
+# ==============================================================================
+# Terraform Variables - Customize Your Deployment
+# ==============================================================================
+# Copy this file to terraform.tfvars and customize the values below
+
+# AWS Configuration
+aws_region = "us-east-1"  # Change to your preferred AWS region
+
+# Application Configuration
+environment = "dev"                    # dev, staging, or prod
+app_name    = "recipe-sharing-app"    # Name for your application
+
+# Optional: Custom domain name (leave empty if you don't have one)
+domain_name = ""  # e.g., "myrecipeapp.com"
+
+# IMPORTANT: You must create an EC2 Key Pair first!
+# 1. Go to EC2 Console → Key Pairs
+# 2. Create a new key pair
+# 3. Download the .pem file
+# 4. Update the key_name in main.tf with your key pair name
